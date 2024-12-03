@@ -1,28 +1,28 @@
-function result() {
+function getPanel() {
   return document.getElementById("result");
 }
 
 function insert(num) {
-  let numero = result();
-  numero.innerHTML = numero.innerHTML + num;
+  let el = getPanel();
+  el.innerHTML = el.innerHTML + num;
 }
 
 function limpar() {
-  result().innerHTML = "";
+  getPanel().innerHTML = "";
 }
 
 function apagar() {
-  let resultado = result();
-  let resulte = resultado.innerHTML;
-  resultado.innerHTML = resulte.substring(0, resulte.length - 1);
+  let el = getPanel();
+  let value = el.innerHTML;
+  el.innerHTML = value.substring(0, value.length - 1);
 }
 
 function calc() {
-  let resultado = result().innerHTML;
+  let resultado = getPanel().innerHTML;
 
   if (resultado) {
-    result().innerHTML = eval(resultado);
+    getPanel().innerHTML = eval(resultado);
   } else {
-    result().innerHTML = "Nada para calcular!";
+    getPanel().innerHTML = "Nada para calcular!";
   }
 }
